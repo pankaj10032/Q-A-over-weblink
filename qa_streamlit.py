@@ -37,7 +37,7 @@ if text_input:
 
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=200,
-        chunk_overlap0=50,
+        chunk_overlap=50,
     )
 
     splitted_text = text_splitter.split_documents(text)
