@@ -6,7 +6,7 @@ from langchain.llms import OpenAI
 from langchain.chains import ConversationalRetrievalChain
 from langchain.chat_models import ChatOpenAI
 from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.embeddings import OpenAIEmbeddings
+from langchain.embeddings.huggingface import HuggingFaceEmbeddings
 import os
 
 url="https://www.cranberry.fit/post/ovulation-pain-unmasking-the-mystery"
@@ -43,7 +43,7 @@ if text_input:
 
     splitted_text = text_splitter.split_documents(text)
 
-    embeddings = OpenAIEmbeddings()
+    embeddings = HuggingFaceEmbeddings(model_name="all-mpnet-base-v2")
     vectorstore = FAISS.from_documents(splitted_text, embeddings)
 
     chain = ConversationalRetrievalChain.from_llm(llm, vectorstore.as_retriever(), return_source_documents=True)
