@@ -18,7 +18,7 @@ def get_api_key():
 def load_LLM():
     """Logic for loading the chain you want to use should go here."""
     # Make sure your openai_api_key is set as an environment variable
-    llm = ChatOpenAI(model_name='gpt-3.5-turbo',temperature=.7)
+    llm = ChatOpenAI(model_name='gpt-3.5-turbo',temperature=0)
     return llm
 os.environ['OPENAI_API_KEY']=get_api_key()
 def get_text():
