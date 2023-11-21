@@ -6,6 +6,7 @@ from langchain.llms import OpenAI
 from langchain.chains import ConversationalRetrievalChain
 from langchain.chat_models import ChatOpenAI
 from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain.embeddings import OpenAIEmbeddings
 import os
 
 url="https://www.cranberry.fit/post/ovulation-pain-unmasking-the-mystery"
@@ -36,7 +37,7 @@ if text_input:
     text = loader.load()
 
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=200,
+        chunk_size=100,
         chunk_overlap=50,
     )
 
