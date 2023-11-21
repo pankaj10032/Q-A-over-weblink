@@ -2,4 +2,4 @@ langchain
 openai
 bs4
 requests
-
+tiktoken
